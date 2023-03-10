@@ -46,14 +46,105 @@ function App() {
     // bottom.scrollIntoView({ behavior: "smooth" });
     
   }
+
+  const body = document.getElementById('body');
+  const topBar = document.getElementById('topBar');
+  const sendBox = document.getElementById('sendBox');
+  const sendBoxContainer = document.getElementById('sendBoxContainer');
+  const sendButton = document.getElementById('sendButton');
+  const bubbleClient = Array.from(document.querySelectorAll('.bubble.client'));
+  const bubbleServer = Array.from(document.querySelectorAll('.bubble.server'));
   
+  const darkMode = () => {
+    const body = document.getElementById('body');
+    const topBar = document.getElementById('topBar');
+    const sendBox = document.getElementById('sendBox');
+    const sendBoxContainer = document.getElementById('sendBoxContainer');
+    const sendButton = document.getElementById('sendButton');
+    const bubbleClient = Array.from(document.querySelectorAll('.bubble.client'));
+    const bubbleServer = Array.from(document.querySelectorAll('.bubble.server'));
+
+
+    body.style.background='#2D2424';
+    topBar.style.background='#5C3D2E';
+    topBar.style.color='#fff';
+    sendButton.style.color='#fff';
+    sendBox.style.background='#3d3232';
+    sendBoxContainer.style.background='#5C3D2E';
+    bubbleClient.map((element) => {
+      element.style.background="#5C3D2E";
+      element.style.color="#fff";
+      return 0;
+    });
+    bubbleServer.map((element) => {
+      element.style.background="#B85C38";
+      element.style.color="#fff";
+      return 0;
+    });
+    document.getElementById('mode').className="barIcon fa-solid fa-moon";
+  }
+  
+  const lightMode = () => {
+    const body = document.getElementById('body');
+    const topBar = document.getElementById('topBar');
+    const sendBox = document.getElementById('sendBox');
+    const sendBoxContainer = document.getElementById('sendBoxContainer');
+    const sendButton = document.getElementById('sendButton');
+    const bubbleClient = Array.from(document.querySelectorAll('.bubble.client'));
+    const bubbleServer = Array.from(document.querySelectorAll('.bubble.server'));
+
+
+
+    body.style.background='#FDF6F0';
+    topBar.style.background='#FFE7CC';
+    topBar.style.color='#000';
+    sendButton.style.color='#000';
+    sendBox.style.background='#faf2ec';
+    sendBoxContainer.style.background='#F8E2CF';
+    bubbleClient.map((element) => {
+      element.style.background="#FFE7CC";
+      element.style.color="#000";
+      return 0;
+    });
+    bubbleServer.map((element) => {
+      element.style.background="#facfb5";
+      element.style.color="#000";
+      return 0;
+    });
+    document.getElementById('mode').className="barIcon fa-regular fa-moon";
+  }
+
+
+
   useEffect(() => {
+
+    if (bubbles.length > 0) {
+      const bubbleClient = Array.from(document.querySelectorAll('.bubble.client'));
+      const bubbleServer = Array.from(document.querySelectorAll('.bubble.server'));
+  
+      bubbleClient.map((element) => {
+        element.style.transition="0";
+        return 0;
+      });
+      bubbleServer.map((element) => {
+        element.style.transition="0";
+        return 0;
+      });
+    }
+
     const bottom = document.getElementById("bottom");
     bottom.scrollIntoView({behavior:'smooth'});
     if(bubbles.length > 0) {
       const emptyChat = document.getElementById("emptyChat");
       emptyChat.style.display = "none";
     }
+    if (mode % 2 != 0) {
+      darkMode();
+    }
+    else {
+      lightMode();
+    }
+
   }, [bubbles]);
 
   const deleteAll = () => {
@@ -66,51 +157,12 @@ function App() {
     ]);
   }
   const toggleMode = () => {
-    const body = document.getElementById('body');
-    const topBar = document.getElementById('topBar');
-    const sendBox = document.getElementById('sendBox');
-    const sendBoxContainer = document.getElementById('sendBoxContainer');
-    const sendButton = document.getElementById('sendButton');
-    const bubbleClient = Array.from(document.querySelectorAll('.bubble.client'));
-    const bubbleServer = Array.from(document.querySelectorAll('.bubble.server'));
 
     if (mode % 2 === 0) {
-      body.style.background='#2D2424';
-      topBar.style.background='#5C3D2E';
-      topBar.style.color='#fff';
-      sendButton.style.color='#fff';
-      sendBox.style.background='#3d3232';
-      sendBoxContainer.style.background='#5C3D2E';
-      bubbleClient.map((element) => {
-        element.style.background="#5C3D2E";
-        element.style.color="#fff";
-        return 0;
-      });
-      bubbleServer.map((element) => {
-        element.style.background="#B85C38";
-        element.style.color="#fff";
-        return 0;
-      });
-      document.getElementById('mode').className="barIcon fa-solid fa-moon";
+      darkMode();
     }
     else {
-      body.style.background='#FDF6F0';
-      topBar.style.background='#FFE7CC';
-      topBar.style.color='#000';
-      sendButton.style.color='#000';
-      sendBox.style.background='#faf2ec';
-      sendBoxContainer.style.background='#F8E2CF';
-      bubbleClient.map((element) => {
-        element.style.background="#FFE7CC";
-        element.style.color="#000";
-        return 0;
-      });
-      bubbleServer.map((element) => {
-        element.style.background="#facfb5";
-        element.style.color="#000";
-        return 0;
-      });
-      document.getElementById('mode').className="barIcon fa-regular fa-moon";
+      lightMode();
     }
     mode++;
   }
