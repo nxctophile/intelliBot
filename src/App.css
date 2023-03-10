@@ -228,7 +228,7 @@ body {
         width: 100vw;
         margin-top: 120px;
         /* height: 77vh; */
-        height: 86%;
+        height: 80%;
         border-radius: 0;
         position: fixed;
         top: -75px;
@@ -265,8 +265,16 @@ body {
     }
 }
 
+
 @media only screen and (max-height:1000px) {
     #MainSection {
         margin-top: 135px;
+        height: 86%;
+    }
+}
+
+@media only screen and (max-height:800px) {
+    #MainSection {
+        height: 80%;
     }
 }
