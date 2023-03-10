@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MainComponent from './components/MainComponent';
 
 let mode = 0;
@@ -7,6 +7,7 @@ let mode = 0;
 function App() {
 
   const [bubbles, setBubbles] = useState([]);
+  const [responseLoading, setResponseLoading] = useState(false);
 
   const initFunction = async () => {
     const message = document.getElementById('sendBox').value;
@@ -17,7 +18,11 @@ function App() {
         'response': message
       }
     ]);
+    const deletedChat = document.getElementById("deletedChat");
+    deletedChat.style.display = "none";
     document.getElementById('sendBox').value = '';
+    setResponseLoading(true);
+    // bottom.scrollIntoView();
     const { Configuration, OpenAIApi } = require("openai");
     const configuration = new Configuration({
       apiKey: process.env.REACT_APP_OPENAI_API_KEY
@@ -29,6 +34,7 @@ function App() {
         max_tokens: 200,
         temperature: 0.2,
     });
+    setResponseLoading(false);
 
     setBubbles(prevBubbles => [
       ...prevBubbles,
@@ -37,9 +43,22 @@ function App() {
         'response': response.data.choices[0].text
       }
     ]);
+    // bottom.scrollIntoView({ behavior: "smooth" });
+    
   }
+  
+  useEffect(() => {
+    const bottom = document.getElementById("bottom");
+    bottom.scrollIntoView({behavior:'smooth'});
+    if(bubbles.length > 0) {
+      const emptyChat = document.getElementById("emptyChat");
+      emptyChat.style.display = "none";
+    }
+  }, [bubbles]);
 
   const deleteAll = () => {
+    const deletedChat = document.getElementById("deletedChat");
+    deletedChat.style.display = "flex";
     setBubbles([
       {
         'side': 'delete'
@@ -96,6 +115,9 @@ function App() {
     mode++;
   }
 
+  
+
+
   return (
     <>
       <MainComponent
@@ -103,6 +125,7 @@ function App() {
         bubbles={bubbles}
         deleteAll={deleteAll}
         toggleMode={toggleMode}
+        responseLoading={responseLoading}
       />
     </>
   );

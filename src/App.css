@@ -1,6 +1,7 @@
 * {
     font-family: 'DM Sans', sans-serif;
     transition: .3s;
+    outline: none;
 }
 body {
     background: #FDF6F0;
@@ -23,7 +24,7 @@ body {
     /* border-radius: 15px; */
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    padding-bottom: 59px;
+    /* padding-bottom: 59px; */
 }
 
 #sendBox {
@@ -35,20 +36,20 @@ body {
     padding-left: 15px;
     font-size: 20px;
     border: none;
-    box-shadow: 0 0 10px #856851bb inset;
+    box-shadow: 0 0 10px #85685173 inset;
     /* box-shadow: 0 0 10px #ccb1ae inset; */
     outline: none;
     background-color: #faf2ec;
 }
 
-#sendBox:focus {
+/* #sendBox:focus {
     
-}
+} */
 
 #sendButton {
     font-size: 24px;
     text-align: center;
-    box-shadow: 0 0 10px #856851bb;
+    box-shadow: 0 0 10px #8568517e;
     /* box-shadow: 0 0 10px #ccb1ae; */
     padding: 10px 12px;
     padding-left: 10px;
@@ -65,7 +66,38 @@ body {
     padding: 20px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    position: relative;
+    bottom: 60px;
 }
+
+#emptyChat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#emptyChat > img {
+    width: 250px;
+    border-radius: 30px;
+    border-bottom-left-radius: 0;
+    box-shadow: 0 0 15px #cccccc60;
+}
+
+#deletedChat {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+}
+#deletedChat > img {
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border-bottom-left-radius: 0;
+    box-shadow: 0 0 15px #cccccc60;
+}
+
 #responseContainer {
     margin-left: 20px;
     width: 90%;
@@ -101,6 +133,7 @@ body {
     padding: 10px;
     color: #000;
     border-color: transparent;
+    border-bottom-right-radius: 2px;
 }
 
 .bubble.server {
@@ -109,6 +142,7 @@ body {
     padding: 10px;
     margin-left: -15px;
     border-color: transparent;
+    border-bottom-left-radius: 2px;
 }
 
 .bubble.delete {
@@ -172,4 +206,67 @@ body {
     transform: scale(1.05);
     text-shadow: 0 0 10px #adadad;
     cursor: pointer;
+}
+#tag {
+    font-size: 10px;
+    margin-left: 3px;
+}
+
+#responseLoading > img {
+    width: 50px;
+}
+
+@media only screen and (max-width:500px) {
+    #topBar {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 0;
+    }
+    #MainSection {
+        width: 100vw;
+        margin-top: 120px;
+        /* height: 77vh; */
+        height: 86%;
+        border-radius: 0;
+        position: fixed;
+        top: -75px;
+    }
+
+    #responseContainer {
+        margin-left: 15px;
+    }
+    .barIcon {
+        left: 0px;
+    }
+    #sendBoxContainer {
+        border-radius: 0;
+        position: fixed;
+        width: 92vw;
+        bottom: 0;
+        height: 30px;
+        padding-top: 15px;
+        padding-bottom: 30px;
+    }
+    #sendButton {
+        margin-left: 20px;
+        margin-right: 10px;
+        padding: 11px;
+        padding-top: 10px;
+        padding-bottom: 33px;
+    }
+    #topButtonContainer {
+        position: absolute;
+        right: 20px;
+    }
+    .bubble {
+        max-width: 75%;
+    }
+}
+
+@media only screen and (max-height:1000px) {
+    #MainSection {
+        margin-top: 135px;
+    }
 }
