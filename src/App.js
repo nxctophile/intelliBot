@@ -46,14 +46,6 @@ function App() {
     // bottom.scrollIntoView({ behavior: "smooth" });
     
   }
-
-  const body = document.getElementById('body');
-  const topBar = document.getElementById('topBar');
-  const sendBox = document.getElementById('sendBox');
-  const sendBoxContainer = document.getElementById('sendBoxContainer');
-  const sendButton = document.getElementById('sendButton');
-  const bubbleClient = Array.from(document.querySelectorAll('.bubble.client'));
-  const bubbleServer = Array.from(document.querySelectorAll('.bubble.server'));
   
   const darkMode = () => {
     const body = document.getElementById('body');
@@ -138,7 +130,7 @@ function App() {
       const emptyChat = document.getElementById("emptyChat");
       emptyChat.style.display = "none";
     }
-    if (mode % 2 != 0) {
+    if (mode % 2 !== 0) {
       darkMode();
     }
     else {
