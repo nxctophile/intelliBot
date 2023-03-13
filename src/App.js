@@ -53,6 +53,7 @@ function App() {
     const sendBox = document.getElementById('sendBox');
     const sendBoxContainer = document.getElementById('sendBoxContainer');
     const sendButton = document.getElementById('sendButton');
+    const deletedChat = document.getElementById('deletedChat');
     const bubbleClient = Array.from(document.querySelectorAll('.bubble.client'));
     const bubbleServer = Array.from(document.querySelectorAll('.bubble.server'));
 
@@ -61,7 +62,9 @@ function App() {
     topBar.style.background='#5C3D2E';
     topBar.style.color='#fff';
     sendButton.style.color='#fff';
+    sendBox.style.color='#fff';
     sendBox.style.background='#3d3232';
+    deletedChat.style.color="#fff";
     sendBoxContainer.style.background='#5C3D2E';
     bubbleClient.map((element) => {
       element.style.background="#5C3D2E";
@@ -82,6 +85,7 @@ function App() {
     const sendBox = document.getElementById('sendBox');
     const sendBoxContainer = document.getElementById('sendBoxContainer');
     const sendButton = document.getElementById('sendButton');
+    const deletedChat = document.getElementById('deletedChat');
     const bubbleClient = Array.from(document.querySelectorAll('.bubble.client'));
     const bubbleServer = Array.from(document.querySelectorAll('.bubble.server'));
 
@@ -91,8 +95,10 @@ function App() {
     topBar.style.background='#FFE7CC';
     topBar.style.color='#000';
     sendButton.style.color='#000';
+    sendBox.style.color='#000';
     sendBox.style.background='#faf2ec';
     sendBoxContainer.style.background='#F8E2CF';
+    deletedChat.style.color="#000";
     bubbleClient.map((element) => {
       element.style.background="#FFE7CC";
       element.style.color="#000";

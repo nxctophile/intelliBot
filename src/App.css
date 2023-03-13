@@ -14,7 +14,8 @@ body {
     overflow: hidden;
 }
 #MainSection {
-    height: 800px;
+    position: fixed;
+    height: 70.6vh;
     margin-bottom: 70px;
     width: 460px;
     /* box-shadow: 0 0 30px #f8cba6bb; */
@@ -66,8 +67,8 @@ body {
     padding: 20px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    position: relative;
-    bottom: 60px;
+    position: fixed;
+    bottom: 10.3vh;
 }
 
 #emptyChat {
@@ -215,6 +216,10 @@ body {
 #responseLoading > img {
     width: 50px;
 }
+#topButtonContainer {
+    position: relative;
+    right: 27px;
+}
 
 @media only screen and (max-width:500px) {
     #topBar {
@@ -227,14 +232,14 @@ body {
     #MainSection {
         width: 100vw;
         margin-top: 120px;
-        /* height: 77vh; */
-        height: 80%;
+        height: 89.4vh;
         border-radius: 0;
         position: fixed;
         top: -75px;
     }
 
     #responseContainer {
+        margin-top: 20px;
         margin-left: 15px;
     }
     .barIcon {
@@ -266,15 +271,15 @@ body {
 }
 
 
-@media only screen and (max-height:1000px) {
-    #MainSection {
-        margin-top: 135px;
-        height: 86%;
-    }
-}
+/*@media only screen and (max-height:1000px), (max-width:500px) {*/
+/*    #MainSection {*/
+/*        margin-top: 135px;*/
+/*        height: 86%;*/
+/*    }*/
+/*}*/
 
-@media only screen and (max-height:800px) {
-    #MainSection {
-        height: 80%;
-    }
-}
+/*@media only screen and (max-height:800px), (max-width:500px) {*/
+/*    #MainSection {*/
+/*        height: 80%;*/
+/*    }*/
+/*}*/
