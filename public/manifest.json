@@ -1,7 +1,8 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "intelliBot",
+  "name": "NLP Assistant",
   "icons": [
+    "https://i.ibb.co/SQTT0tj/bot.png"
   ],
   "start_url": ".",
   "display": "standalone",
