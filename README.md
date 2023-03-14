@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# intelliBot - Your own guru, at your fingertips.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/apidboy/intellibot?style=plastic)](https://github.com/ApidBoy/intelliBot)
+[![GitHub license](https://img.shields.io/github/license/apidboy/intellibot?style=plastic)](https://github.com/ApidBoy/intelliBot/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/apidboy/intellibot?style=plastic)](https://github.com/ApidBoy/intelliBot/issues)
+[![Website](https://img.shields.io/website?down_color=red&down_message=down&style=plastic&up_color=green&up_message=up&url=https%3A%2F%2Fintellibot.netlify.app)](https://intellibot.netlify.app)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/w/apidboy/intellibot?style=plastic)](https://github.com/ApidBoy/intelliBot)
+[![GitHub forks](https://img.shields.io/github/forks/apidboy/intellibot?style=social)](https://github.com/ApidBoy/intelliBot)
 
-## Available Scripts
+intelliBot is an Open-Source web based NLP assistant which uses OpenAI API to fetch results based on entered data query. \
+[Click here](https://intellibot.netlify.app) or go to [https://intellibot.netlify.app](https://intellibot.netlify.app) (not available at the moment) to visit the Rhythmie website.
+
+>[NOTE - Still in alpha development phase.]
+
+## Q - How to start development server?
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
-Runs the app in the development mode.\
+This script runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `yarn test`
+## Q - How to build an optimized build?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `npm run build`
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It builds the app for production to the `build` folder.\
+It correctly bundles the app in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The app will now be ready to be deployed!
