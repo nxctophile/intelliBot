@@ -8,7 +8,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/apidboy/intellibot?style=social)](https://github.com/ApidBoy/intelliBot)
 
 intelliBot is an Open-Source web based NLP assistant which uses OpenAI API to fetch results based on entered data query. \
-[Click here](https://intellibot.netlify.app) or go to [https://intellibot.netlify.app](https://intellibot.netlify.app) to visit the Rhythmie website.
+[Click here](https://intellibot.netlify.app) or go to [https://intellibot.netlify.app](https://intellibot.netlify.app) to visit the intelliBot website.
 
 >[NOTE - Still in alpha development phase.]
 
