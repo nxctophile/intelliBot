@@ -20,8 +20,8 @@ body {
     width: 460px;
     /* box-shadow: 0 0 30px #f8cba6bb; */
     box-shadow: 0 0 30px #6d5542bb;
-    /* overflow-x: hidden;
-    overflow-y: scroll; */
+    /* overflow-x: hidden; */
+    overflow-y: scroll;
     /* border-radius: 15px; */
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
