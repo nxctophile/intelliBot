@@ -11,38 +11,41 @@ function App() {
 
   const initFunction = async () => {
     const message = document.getElementById('sendBox').value;
-    setBubbles(prevBubbles => [
-      ...prevBubbles,
-      {
-        'side': 'client',
-        'response': message
-      }
-    ]);
-    const deletedChat = document.getElementById("deletedChat");
-    deletedChat.style.display = "none";
-    document.getElementById('sendBox').value = '';
-    setResponseLoading(true);
-    // bottom.scrollIntoView();
-    const { Configuration, OpenAIApi } = require("openai");
-    const configuration = new Configuration({
-      apiKey: process.env.REACT_APP_OPENAI_API_KEY
-    });
-    const openai = new OpenAIApi(configuration);
+    if(message.length > 0) {
+      setBubbles(prevBubbles => [
+        ...prevBubbles,
+        {
+          'side': 'client',
+          'response': message
+        }
+      ]);
+      const deletedChat = document.getElementById("deletedChat");
+      deletedChat.style.display = "none";
+      document.getElementById('sendBox').value = '';
+      setResponseLoading(true);
+      // bottom.scrollIntoView();
+      const { Configuration, OpenAIApi } = require("openai");
+      const configuration = new Configuration({
+        // apiKey: process.env.REACT_APP_OPENAI_API_KEY
+        apiKey: "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"
+      });
+      const openai = new OpenAIApi(configuration);
       const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: message.toLowerCase(),
         max_tokens: 200,
         temperature: 0.2,
-    });
-    setResponseLoading(false);
+      });
+      setResponseLoading(false);
 
-    setBubbles(prevBubbles => [
-      ...prevBubbles,
-      {
-        'side': 'server',
-        'response': response.data.choices[0].text
-      }
-    ]);
+      setBubbles(prevBubbles => [
+        ...prevBubbles,
+        {
+          'side': 'server',
+          'response': response.data.choices[0].text
+        }
+      ]);
+    }
     // bottom.scrollIntoView({ behavior: "smooth" });
     
   }
