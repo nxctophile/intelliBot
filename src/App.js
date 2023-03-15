@@ -26,8 +26,7 @@ function App() {
       // bottom.scrollIntoView();
       const { Configuration, OpenAIApi } = require("openai");
       const configuration = new Configuration({
-        // apiKey: process.env.REACT_APP_OPENAI_API_KEY
-        apiKey: "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"
+        apiKey: process.env.REACT_APP_OPENAI_API_KEY
       });
       const openai = new OpenAIApi(configuration);
       const response = await openai.createCompletion({
