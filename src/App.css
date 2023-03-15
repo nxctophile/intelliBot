@@ -26,8 +26,8 @@ body {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     /* padding-bottom: 59px; */
-    padding-bottom: 40px;
 }
+
 
 #sendBox {
     width: 347px;
@@ -242,6 +242,7 @@ body {
     #responseContainer {
         margin-top: 20px;
         margin-left: 15px;
+        margin-bottom: 30px;
     }
     .barIcon {
         left: 0px;
