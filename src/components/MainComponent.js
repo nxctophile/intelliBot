@@ -1,7 +1,16 @@
-import React from 'react'
+import React, {useRef, useEffect} from 'react'
 import TopBar from './TopBar';
 
 function MainComponent(props) {
+  const sendBoxRef = useRef(null);
+  useEffect(() => {
+    const sendBox = sendBoxRef.current;
+    sendBox.addEventListener("keydown", (event) => {
+      if (event.keyCode === 13) {
+        props.initFunction();
+      }
+    })
+  }, [props, props.initFunction]);
   return (
     <div id="MainSectionContainer">
         <section id="MainSection">
@@ -34,7 +43,7 @@ function MainComponent(props) {
               <div id="bottom"></div>
             </div>
             <div id="sendBoxContainer">
-                <input placeholder='Type a message or query...' id="sendBox" type="text"/>
+                <input placeholder='Type a message or query...' id="sendBox" type="text" ref={sendBoxRef}/>
                   <i onClick={props.initFunction} id="sendButton" className="fa-regular fa-paper-plane"></i>
             </div>
         </section>
