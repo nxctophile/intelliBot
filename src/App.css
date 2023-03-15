@@ -26,6 +26,7 @@ body {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     /* padding-bottom: 59px; */
+    padding-bottom: 40px;
 }
 
 #sendBox {
