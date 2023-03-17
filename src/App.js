@@ -11,7 +11,7 @@ function App() {
 
   const initFunction = async () => {
     const message = document.getElementById('sendBox').value;
-    if(message.length > 0) {
+    if(message.length > 0 && message !== "hi") {
       setBubbles(prevBubbles => [
         ...prevBubbles,
         {
